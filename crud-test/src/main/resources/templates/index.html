@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+CRUD 프로젝트 <br>
+----<br>
+create : 유저를 중복 없이 등록한다. <br>
+read : 등록한 유저 ID 목록을 확인한다. <br>
+update : 비밀 번호를 수정한다. <br>
+delete : 등록한 유저를 삭제한다. <br>
+<br>
+
+<li><a th:href="@{/crud/create}">create(insert) :  유저 등록하기</a> </li>
+<li><a th:href="@{/crud/read}">create(select) :  유저 조회하기</a> </li>
+<li><a th:href="@{/crud/update}">create(update) :  유저 수정하기</a> </li>
+<li><a th:href="@{/crud/delete}">create(delete) :  유저 삭제하기</a> </li>
+</body>
+</html>
