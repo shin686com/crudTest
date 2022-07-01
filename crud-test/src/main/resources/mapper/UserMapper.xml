@@ -19,4 +19,28 @@
         FROM USER
         WHERE id = #{userId}
     </select>
+
+<!--    User 조회하기-->
+    <select id="readUser" resultType="com.example.crudtest.dto.UserDto">
+        SELECT id AS userId
+        FROM USER
+    </select>
+<!--    UserId, Pw 조회하기-->
+    <select id="readAllUser" resultType="com.example.crudtest.dto.UserDto">
+        SELECT id AS userId, pw AS userPw
+        FROM USER
+    </select>
+<!--    User 삭제 : 아이디 기준-->
+    <delete id="deleteUser" parameterType="com.example.crudtest.dto.UserDto">
+        DELETE
+        FROM USER
+        WHERE id = #{userId}
+    </delete>
+<!--    비밀번호 변경-->
+    <update id="updateUser" parameterType="com.example.crudtest.dto.UserDto">
+        UPDATE  USER
+        SET pw = #{userPw}
+        WHERE id= #{userId}
+    </update>
+
 </mapper>

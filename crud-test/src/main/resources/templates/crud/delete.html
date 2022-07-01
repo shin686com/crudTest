@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<form th:action="@{/crud/delete}" method="post">
+    아이디 : <input type="text" id="userId" name="userId"> <br>
+    <button type="submit">삭제하기</button>
+</form>
 </body>
 </html>
