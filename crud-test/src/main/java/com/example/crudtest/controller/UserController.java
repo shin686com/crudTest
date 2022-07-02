@@ -4,18 +4,17 @@ import com.example.crudtest.dto.RedirectDto;
 import com.example.crudtest.dto.UpdateUserDto;
 import com.example.crudtest.dto.UserDto;
 import com.example.crudtest.service.UserService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+@RestController
 @Slf4j
 @Controller
 @RequestMapping("/crud")
@@ -26,9 +25,13 @@ public class UserController {
 
     //create(insert) : 유지 등록하기 페이지
     @GetMapping("/create")
-    public String insertUserPage(){
+    public ModelAndView insertUserPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("msg","안녕");
+        modelAndView.addObject("url","/index");
+        modelAndView.setViewName("/redirect");
         log.info("### insetUserPage start");
-        return "/crud/create";
+        return modelAndView;
     }
 
     @PostMapping("/create")
